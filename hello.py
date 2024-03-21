@@ -10,3 +10,8 @@ def rohan():
     return "popat rohan"
 
 # flask --app hello run --reload
+from markupsafe import escape
+
+@app.route("/<name>")
+def hello(name):
+    return f"Hello, {escape(name)}!"
